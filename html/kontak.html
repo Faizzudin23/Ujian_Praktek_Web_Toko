@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!-- Petunjuk Bahasa Indonesia -->
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Kontak & Pendaftaran - PC Part Picker</title>
+        <meta name="description" content="Hubungi kami atau daftarkan diri Anda untuk mendapatkan informasi dan layanan terbaik seputar komponen PC." />
+        <meta name="keywords" content="kontak, pendaftaran, form, html, css" />
+        <meta name="author" content="Muh. Faizzudin" />
+        <link rel="icon" type="image/jpg" href="icon.jpg" />
+        <!-- Link Stylesheet CSS -->
+        <link rel="stylesheet" href="../style.css" />
+    </head>
+
+    <body>
+        <!-- Bagian Atas Halaman -->
+        <header>
+            <div class="logo-toko">
+                <p><i class="fa-solid fa-computer"></i></p>
+            </div>
+            
+            <!-- Bagian Navigasi Halaman -->
+            <nav class="navigasi-halaman">
+                <a href="index.html">Beranda</a>
+                <a href="produk.html">Produk</a>
+                <a href="tentang.html">Tentang</a>
+                <a href="kontak.html">Kontak</a>
+            </nav>
+        </header>
+
+        <!-- Bagian Isi Utama Halaman (Form Pendaftaran) -->
+        <main>
+            <article>
+                <h2>Formulir Pendaftaran & Kontak</h2>
+                <p class="profil-singkat">
+                    Silakan isi formulir di bawah ini untuk menghubungi tim kami atau mendaftarkan akun baru di PC Part Picker.
+                </p>
+            </article>
+
+            <!-- Form Kontak -->
+            <form action="#" method="POST">
+                
+                <!-- Kelompok 1: Informasi Pribadi -->
+                <fieldset>
+                    <legend>Informasi Pribadi</legend>
+                    
+                    <div style="margin-bottom: 1rem;">
+                        <label for="namaLengkap">Nama Lengkap:</label><br />
+                        <input type="text" id="namaLengkap" name="namaLengkap" required style="width: 100%; padding: 0.5rem; margin-top: 0.25rem;" />
+                    </div>
+
+                    <div style="margin-bottom: 1rem;">
+                        <label for="email">Email:</label><br />
+                        <input type="email" id="email" name="email" required style="width: 100%; padding: 0.5rem; margin-top: 0.25rem;" />
+                    </div>
+
+                    <div style="margin-bottom: 1rem;">
+                        <label for="telepon">Nomor Telepon:</label><br />
+                        <input type="tel" id="telepon" name="telepon" style="width: 100%; padding: 0.5rem; margin-top: 0.25rem;" />
+                    </div>
+
+                    <div style="margin-bottom: 1rem;">
+                        <label for="password">Password (Minimal 8 karakter):</label><br />
+                        <input type="password" id="password" name="password" minlength="8" required style="width: 100%; padding: 0.5rem; margin-top: 0.25rem;" />
+                    </div>
+
+                    <div style="margin-bottom: 1rem;">
+                        <label for="tanggalLahir">Tanggal Lahir:</label><br />
+                        <input type="date" id="tanggalLahir" name="tanggalLahir" style="width: 100%; padding: 0.5rem; margin-top: 0.25rem;" />
+                    </div>
+                </fieldset>
+
+                <br />
+
+                <!-- Kelompok 2: Alamat & Lokasi -->
+                <fieldset>
+                    <legend>Alamat & Domisili</legend>
+
+                    <div style="margin-bottom: 1rem;">
+                        <label for="kodePos">Kode Pos:</label><br />
+                        <input type="number" id="kodePos" name="kodePos" style="width: 100%; padding: 0.5rem; margin-top: 0.25rem;" />
+                    </div>
+
+                    <div style="margin-bottom: 1rem;">
+                        <label for="kota">Pilihan Kota:</label><br />
+                        <select id="kota" name="kota" style="width: 100%; padding: 0.5rem; margin-top: 0.25rem;">
+                            <option value="">-- Pilih Kota --</option>
+                            <option value="surabaya">Surabaya</option>
+                            <option value="malang">Malang</option>
+                            <option value="sidoarjo">Sidoarjo</option>
+                            <option value="jakarta">Jakarta</option>
+                            <option value="bandung">Bandung</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <br />
+
+                <!-- Kelompok 3: Informasi Tambahan & Persetujuan -->
+                <fieldset>
+                    <legend>Informasi Tambahan & Persetujuan</legend>
+
+                    <div style="margin-bottom: 1rem;">
+                        <label>Jenis Kelamin:</label><br />
+                        <input type="radio" id="laki" name="jenisKelamin" value="Laki-laki" />
+                        <label for="laki">Laki-laki</label>
+                        &nbsp;&nbsp;
+                        <input type="radio" id="perempuan" name="jenisKelamin" value="Perempuan" />
+                        <label for="perempuan">Perempuan</label>
+                    </div>
+
+                    <div style="margin-bottom: 1rem;">
+                        <label for="pesan">Pesan Tambahan:</label><br />
+                        <textarea id="pesan" name="pesan" rows="4" style="width: 100%; padding: 0.5rem; margin-top: 0.25rem;"></textarea>
+                    </div>
+
+                    <div style="margin-bottom: 1rem;">
+                        <input type="checkbox" id="terms" name="terms" required />
+                        <label for="terms">Saya menyetujui Terms & Conditions yang berlaku</label>
+                    </div>
+                </fieldset>
+
+                <br />
+
+                <!-- Tombol Kirim -->
+                <div>
+                    <input type="submit" value="Kirim Pendaftaran" class="tombol-produk" style="border: none; cursor: pointer;" />
+                </div>
+
+            </form>
+        </main>
+
+        <!-- Bagian Bawah Halaman Web -->
+        <footer>
+            <nav class="social-media">
+                <a href="#"><i class="fa-brands fa-square-whatsapp"></i> WhatsApp</a>
+                <a href="#"><i class="fa-brands fa-square-instagram"></i> Instagram</a>
+                <a href="#"><i class="fa-brands fa-square-twitter"></i> Twitter</a>
+                <a href="#"><i class="fa-brands fa-youtube"></i> Youtube</a>
+            </nav>
+            <br />
+            <p>&copy; 2026 PC Part Picker. Hak Cipta Dilindungi.</p>
+        </footer>
+
+        <!-- Link File JavaScript -->
+        <script src="app.js"></script>
+    </body>
+</html>
