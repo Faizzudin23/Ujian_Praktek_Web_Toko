@@ -1,0 +1,432 @@
+/* ==========================================
+   1. GLOBAL STYLES & TYPOGRAPHY
+   ========================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --warna-utama: #1e293b;
+    --warna-aksen: #2563eb;
+    --warna-bg: #f8fafc;
+    --warna-card: #ffffff;
+    --warna-teks: #334155;
+    --warna-teks-muda: #64748b;
+    --border-radius: 8px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--warna-bg);
+    color: var(--warna-teks);
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+
+/* ==========================================
+   2. HEADER & NAVIGASI (Flexbox)
+   ========================================== */
+header {
+    background: linear-gradient(135deg, #0f172a, var(--warna-utama));
+    color: #ffffff;
+    padding: 1.5rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-toko p {
+    font-size: 1.8rem;
+    color: #60a5fa;
+}
+
+.navigasi-halaman {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navigasi-halaman a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navigasi-halaman a:hover {
+    color: #ffffff;
+}
+
+
+/* ==========================================
+   3. HERO SECTION
+   ========================================== */
+.hero {
+    background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), url('hero-bg.jpg') center/cover no-repeat;
+    color: #ffffff;
+    text-align: center;
+    padding: 5rem 1rem;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #94a3b8;
+}
+
+.tombol-produk {
+    display: inline-block;
+    background-color: var(--warna-aksen);
+    color: #ffffff;
+    padding: 0.75rem 2rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.tombol-produk:hover {
+    background-color: #1d4ed8;
+}
+
+
+/* ==========================================
+   4. MAIN CONTENT & PROFIL
+   ========================================== */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+article {
+    background-color: var(--warna-card);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+
+/* Pseudo-element ::before untuk dekorasi garis bawah heading */
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--warna-utama);
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 4px;
+    background-color: var(--warna-aksen);
+    border-radius: 2px;
+}
+
+.profil-singkat {
+    color: var(--warna-teks-muda);
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #e2e8f0;
+    margin: 2rem 0;
+}
+
+
+/* ==========================================
+   5. PRODUK UNGGULAN (CSS Grid & Position)
+   ========================================== */
+.produk-unggulan h2 {
+    margin-bottom: 1.5rem;
+}
+
+/* Tata letak menggunakan CSS Grid (Default 3 Kolom) */
+.produk-unggulan {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.produk {
+    background-color: var(--warna-card);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    overflow: hidden; /* Mencegah elemen anak keluar batas */
+    position: relative; /* Untuk posisi badge di dalam kartu */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Pseudo-class :hover pada kartu produk */
+.produk:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.produk img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.produk h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--warna-utama);
+}
+
+.produk p {
+    font-size: 1rem;
+    color: var(--warna-aksen);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* Position Absolute untuk Badge / Keterangan Best Seller */
+.produk p span {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: #ef4444;
+    color: #ffffff;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    z-index: 10;
+}
+
+
+/* ==========================================
+   6. FOOTER & PSEUDO-CLASSES (:nth-child)
+   ========================================== */
+footer {
+    background-color: var(--warna-utama);
+    color: #94a3b8;
+    text-align: center;
+    padding: 2.5rem 1rem;
+    margin-top: 3rem;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.social-media a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Pseudo-class :nth-child untuk memberikan warna unik tiap link medsos */
+.social-media a:nth-child(1):hover { color: #25d366; } /* WhatsApp */
+.social-media a:nth-child(2):hover { color: #e1306c; } /* Instagram */
+.social-media a:nth-child(3):hover { color: #1da1f2; } /* Twitter */
+.social-media a:nth-child(4):hover { color: #ff0000; } /* Youtube */
+
+
+/* ==========================================
+   7. RESPONSIVE DESIGN (Media Queries)
+   ========================================== */
+
+/* Tampilan Tablet (>= 768px dan < 1024px) -> Menjadi 2 Kolom */
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+    .produk-unggulan {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Tampilan Mobile (< 768px) -> Menjadi 1 Kolom */
+@media screen and (max-width: 767px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .navigasi-halaman {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .produk-unggulan {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================
+   8. STYLING FORM KONTAK & PENDAFTARAN
+   ========================================== */
+
+/* Mengatur form agar berada di tengah secara horizontal dan vertikal */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+}
+
+form {
+    width: 100%;
+    max-width: 600px;
+    background-color: var(--warna-card);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    margin-top: 1.5rem;
+}
+
+fieldset {
+    border: 1px solid #cbd5e1;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+legend {
+    font-weight: 600;
+    color: var(--warna-utama);
+    padding: 0 0.5rem;
+}
+
+/* Styling input, select, dan textarea */
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="password"],
+form input[type="date"],
+form input[type="number"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #cbd5e1;
+    border-radius: var(--border-radius);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: var(--warna-teks);
+    background-color: #f8fafc;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Focus state menggunakan pseudo-class :focus */
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="tel"]:focus,
+form input[type="password"]:focus,
+form input[type="date"]:focus,
+form input[type="number"]:focus,
+form select:focus,
+form textarea:focus {
+    outline: none;
+    border-color: var(--warna-aksen);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    background-color: #ffffff;
+}
+
+/* Styling label */
+form label {
+    font-weight: 500;
+    color: var(--warna-utama);
+    font-size: 0.95rem;
+}
+
+/* Styling tombol submit dengan efek hover */
+form input[type="submit"] {
+    width: 100%;
+    background-color: var(--warna-aksen);
+    color: #ffffff;
+    padding: 0.85rem;
+    border: none;
+    border-radius: var(--border-radius);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   9. STYLING TABEL PRODUK (produk.html)
+   ========================================== */
+
+/* Kontainer tabel agar responsif di layar kecil */
+.tabel-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 1.5rem;
+    background-color: var(--warna-card);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* Styling dasar tabel */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Menyatukan garis border tabel */
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+}
+
+th, td {
+    padding: 1rem;
+    font-size: 0.95rem;
+    color: var(--warna-teks);
+}
+
+th {
+    background-color: var(--warna-utama);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Garis pembatas antar sel tipis dan rapi */
+th, td {
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* Striped rows menggunakan pseudo-class :nth-child(even) */
+tbody tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+/* Efek hover pada baris tabel */
+tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+    background-color: #f1f5f9;
+}
